@@ -30,7 +30,7 @@ int main(int argc,char** argv)
 
     fprintf(stdout,"VERSION: 0x%08X\n",read_reg(pcie_addr,FPGA_VERSION));
 
-    write_reg(pcie_addr, LED_CONTROL, 0x02);
+    write_reg(pcie_addr, LED_CONTROL, 0x03);
 
     uint32_t write_data[TEST_BRAM_SIZE/4], read_data[TEST_BRAM_SIZE/4];
 

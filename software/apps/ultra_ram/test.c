@@ -39,19 +39,17 @@ int main(int argc,char** argv)
     // Let's test the URAM
     int errors;
     errors = 0;
-    const int Ntest = 50;
+    const int Ntest = 10;
     for (int j=0;j<Ntest;j++){
 
-	// compute test data
-    	for (int i=0; i<Nram; i++){
-        	write_data[i] = rand();
-    	}
+	    // compute test data
+    	for (int i=0; i<Nram; i++) write_data[i] = rand();
 	
-	// copy to uram
-	memcpy( uram, write_data, sizeof(write_data) );
+	    // copy to uram
+	    memcpy( uram, write_data, sizeof(write_data) );
 	
-	// read and check uram data
-	memcpy( read_data, uram, sizeof(write_data) );
+	    // read and check uram data
+	    memcpy( read_data, uram, sizeof(write_data) );
     	for (int i=0; i<Nram; i++) if (read_data[i] != write_data[i]) errors++;
 
     }
@@ -61,4 +59,5 @@ int main(int argc,char** argv)
 
     return 0;
 }
+
 
