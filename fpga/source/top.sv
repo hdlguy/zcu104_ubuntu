@@ -57,7 +57,8 @@ module top (
     assign led[3:2] = led_count[27:26]; 
 
     // This register file gives software contol over unit under test (UUT).
-    logic [15:0][31:0] slv_reg, slv_read;
+    localparam int Nregs = 16;
+    logic [Nregs-1:0][31:0] slv_reg, slv_read;
 
     assign slv_read[0] = 32'hdeadbeef;
     assign slv_read[1] = 32'h76543210;
@@ -65,7 +66,7 @@ module top (
     assign led[1:0] = slv_reg[2][1:0];
     assign slv_read[2] = slv_reg[2];
     
-    assign slv_read[15:3] = slv_reg[15:3];
+    assign slv_read[Nregs-1:3] = slv_reg[Nregs-1:3];
 
 	axi_regfile_v1_0_S00_AXI #	(
 		.C_S_AXI_DATA_WIDTH(32),
