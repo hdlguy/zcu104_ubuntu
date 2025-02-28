@@ -1,4 +1,4 @@
-# Petalinux (2024.2) on ZynqMP AXU2CG-E Board
+# Petalinux (2024.2) on ZynqMP
 
 ## Petalinux Build instructions
 
