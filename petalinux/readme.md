@@ -19,6 +19,7 @@ cd proj1
 petalinux-config --get-hw-description=../sdt/
 
     * Image Packaging Configuration -> Root Filesystem Type -> EXT4                         (if you want a persistent rootfs)
+    * DTG Settings -> Kernel Bootargs -> manual bootargs -> earlycon console=ttyPS0,115200 root=/dev/mmcblk0p2 rw rootwait clk_ignore_unused
     * save and exit
 
 ### Build the bootloader
