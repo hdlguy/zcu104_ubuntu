@@ -11,10 +11,18 @@
 ### Create Petalinux project
 
 petalinux-create project --template zynqMP --name proj1
+cd proj1
+
+### fix bug in Petalinux 2024.2
+
+vi project-spec/meta-user/conf/petalinuxbsp.conf
+
+add these lines
+
+MACHINE_FEATURES:append = " vcu"
+SOC_VARIANT = "ev"
 
 ### configure project from hardware
-
-cd proj1
 
 petalinux-config --get-hw-description=../sdt/
 
