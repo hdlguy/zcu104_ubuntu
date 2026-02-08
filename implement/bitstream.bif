@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+    ./proj.runs/impl_1/top.bit
+}
+
+
